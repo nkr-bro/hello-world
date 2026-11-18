@@ -1,9 +1,11 @@
+import {isGameFinished} from "./isGameFinished";
 import {GameState} from "./models/GameState";
-
 export function upgradeWebsite(
     state : GameState,
     websiteId : number,
 ): GameState{
+    if (isGameFinished(state)) return state;
+
     if (state.money < 100 ) return state;
 
     const website = state.websites.find(

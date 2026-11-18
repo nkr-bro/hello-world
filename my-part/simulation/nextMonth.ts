@@ -1,9 +1,11 @@
-import {END_YEAR,type GameState} from "./models/GameState";
+
 import {getMonthlySummary} from "./getMonthlySummary";
+import type {GameState} from "./models/GameState";
+import{isGameFinished} from "./isGameFinished";
 
 export function nextMonth(state: GameState):
 GameState{
-    if (state.year >= END_YEAR && state.month == 12){
+    if (isGameFinished(state)){
         return state;
     }
     const isDecember = state.month == 12;
