@@ -3,8 +3,9 @@ export interface Website {
   name: string;
   foundedYear: number;
   monthlyIncome: number;
+  monthlyCost: number ;
 }
-
+export const MONTH_DURATION_MS = 120_000;
 export interface GameState {
   year: number;
   month: number;
