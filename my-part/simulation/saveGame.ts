@@ -27,3 +27,13 @@ export function loadGame(): GameState | null {
         return null;
     }
 }
+
+export function deleteSave(): boolean {
+    try {
+        localStorage.removeItem(SAVE_KEY);
+        return true;
+
+    } catch {
+        return false;
+    }
+}
