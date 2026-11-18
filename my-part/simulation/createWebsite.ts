@@ -7,6 +7,6 @@ export function createWebsite(state: GameState): GameState {
   return {
     ...state,
     money: state.money - WEBSITE_COST,
-    websites: [...state.websites, { id, name: `My website #${id}`, foundedYear: state.year }],
+    websites: [...state.websites, { id, name: `My website #${id}`, foundedYear: state.year,monthlyIncome : 10, }],
   };
 }
