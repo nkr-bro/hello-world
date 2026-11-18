@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { GameCanvas } from './components/GameCanvas';
-import { initialState, WEBSITE_COST } from './simulation/models/GameState';
-import { createWebsite } from './simulation/createWebsite';
+import { initialState, WEBSITE_COST } from '../my-part/simulation/models/GameState';
+import { createWebsite } from '../my-part/simulation/createWebsite';
 
 export default function App() {
   const [state, setState] = useState(initialState);
