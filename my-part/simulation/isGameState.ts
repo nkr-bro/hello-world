@@ -29,11 +29,31 @@ value is GameState {
             if (typeof site !== "object" || site === null) return false;
 
             const website = site as Record < string , unknown>;
+            if (website.webFiles !== undefined) {
+                if (typeof website.webFiles !== "object" || website.webFiles === null) {return false;}
+
+
+                const files = website.webFiles as Record<string, unknown>
+
+
+                if (
+                    typeof files.html !== "string" ||
+                    typeof files.css !== "string" ||
+                    typeof files.js !== "string"
+                ){return false;
+
+                }
+
+
+            }
+
+
             return (
                 typeof website.id === "number" &&
                 Number.isInteger(website.id) &&
                 website.id > 0 &&
                 typeof website.name === "string" &&
+                (website.phpSource === undefined || typeof website.phpSource === "string") &&
                 typeof website.foundedYear === "number" &&
                 Number.isInteger(website.foundedYear) &&
                 website.foundedYear >= START_YEAR &&

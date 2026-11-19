@@ -4,6 +4,13 @@ export interface Website {
   foundedYear: number;
   monthlyIncome: number;
   monthlyCost: number ;
+  phpSource?: string;
+  webFiles?: WebFiles;
+}
+export interface WebFiles {
+  html : string;
+  css : string;
+  js : string;
 }
 export const MONTH_DURATION_MS = 120_000;
 export interface GameState {
